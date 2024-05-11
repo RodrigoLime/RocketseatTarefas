@@ -1,10 +1,11 @@
 ﻿using Tarefas.Communication.Enums;
 using TaskStatus = Tarefas.Communication.Enums.TaskStatus;
 
-namespace Tarefas.Communication.Requests;
+namespace Tarefas.Communication.Responses;
 
-public class RequestTaskJson
+public class ResponseTaskJson
 {
+    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public TaskPriority Priority { get; set; }

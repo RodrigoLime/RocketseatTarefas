@@ -7,9 +7,11 @@ public class RegisterTaskUseCase
 {
     public ResponseRegisterTaskJson Execute(RequestTaskJson request)
     {
+        Random random = new Random();
+
         return new ResponseRegisterTaskJson
         {
-            Id = request.Id,
+            Id = random.Next(1, 101),
             Name = request.Name,
         };
     }
