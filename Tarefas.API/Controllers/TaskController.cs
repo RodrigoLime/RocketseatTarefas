@@ -59,6 +59,7 @@ public class TaskController : ControllerBase
 
 
     [HttpPut]
+    [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status400BadRequest)]
     public IActionResult Edit([FromRoute] int id, [FromBody] RequestTaskJson request) //Endpoint para editar uma tarefa
@@ -74,7 +75,7 @@ public class TaskController : ControllerBase
     [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status404NotFound)]
-    public IActionResult Delete(int id) //Endpoint para deletar uma tarefa
+    public IActionResult Delete([FromRoute] int id) //Endpoint para deletar uma tarefa
     {
         var useCase = new DeleteTaskUseCase();
 
